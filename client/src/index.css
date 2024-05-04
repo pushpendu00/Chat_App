@@ -18,3 +18,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.message-body{
+  overflow-y: scroll;
+  /* scrollbar-color: #e92525; */
+}
+
+.message-body::-webkit-scrollbar{
+  display: none;
+}

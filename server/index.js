@@ -27,13 +27,19 @@ io.on('connection', (socket)=>{
 
     socket.on("join_room",(data)=>{
         socket.join(data.room);
-        // socket.to(data.room).emit('new_user',data.user);
+        // socket.to(data.room).emit('new_user',socket.id);
     });
 
     socket.on('send_message',(data)=>{
         // console.log(data);
         socket.to(data.room).emit('receive_message',data);
     });
+
+    socket.on('like_message',(data)=>{
+        // console.log(data);
+        socket.to(data.room).emit('like_message',data);
+    });
+
 
     socket.on('disconnect',()=>{
         // console.log('disconnect : ',socket.id);
